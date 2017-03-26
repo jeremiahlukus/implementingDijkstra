@@ -105,7 +105,7 @@ public class Graph {
 
 
         for(int i = 0; i < this.nodes.length; i++){
-           output = ("\nThe shortest distance from node 0 to node " + i + " is " + nodes[i].getDistanceFromSource());
+           output += ("\nThe shortest distance from node 0 to node " + i + " is " + nodes[i].getDistanceFromSource());
         }
         System.out.println(output);
     }

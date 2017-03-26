@@ -14,7 +14,7 @@ public class Main {
         Scanner lineScanner;
         int countInput;
         String line;
-        inputReader = new BufferedReader(new FileReader("/Users/jeremiahlukus/Desktop/test.txt"));
+        inputReader = new BufferedReader(new FileReader("/Users/jeremiahlukus/Desktop/real2.txt"));
         inputReader.readLine();//skips the first line
         int edgecount = 0;
         while ((line = inputReader.readLine()) != null) {
@@ -34,7 +34,7 @@ public class Main {
                 //System.out.printf("Edge\n");
                 edgecount++;//counting edges to create edge count...
             }
-            //System.out.println(line);
+            System.out.println(line);
 
         }
         inputReader.close();
@@ -42,14 +42,13 @@ public class Main {
         Edge[] edges = new Edge[edgecount];//creating edge array  // If i give it the correct edgecount i get error
 
 //now storing to array
-        inputReader = new BufferedReader(new FileReader("/Users/jeremiahlukus/Desktop/test.txt"));
+        inputReader = new BufferedReader(new FileReader("/Users/jeremiahlukus/Desktop/real2.txt"));
         inputReader.readLine();//skips the first line
         int source = 0, i = 0;
         while ((line = inputReader.readLine()) != null) {
             lineScanner = new Scanner(line);
             countInput = 0;
-            int a[] = new int[2], k = 0; //size of array a should be 2 its holding the source
-            // as well as other two elements, edge and distance.
+            int a[] = new int[2], k = 0; //size of array a should be 2 its holding the source as well as other two elements, edge and distance.
             while (lineScanner.hasNext()) {
                 countInput++;
                 a[k] = lineScanner.nextInt();
