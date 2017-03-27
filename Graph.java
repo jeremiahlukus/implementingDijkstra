@@ -102,12 +102,14 @@ public class Graph {
         String output= "";
         System.out.println("Number of nodes = " + this.numOfNodes);
         System.out.println("\nNumber of edges = " + this.numOfEdges);
-
+int sum = 0;
 
         for(int i = 0; i < this.nodes.length; i++){
-           output += ("\nThe shortest distance from node 0 to node " + i + " is " + nodes[i].getDistanceFromSource());
+           output = ("\nThe shortest distance from node 0 to node " + i + " is " + nodes[i].getDistanceFromSource());
+           sum +=  nodes[i].getDistanceFromSource();
         }
         System.out.println(output);
+        System.out.println(sum);
     }
 
 
