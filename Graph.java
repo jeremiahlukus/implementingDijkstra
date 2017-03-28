@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 /**
  * Created by jeremiahlukus on 3/24/17.
+ *
+ * Takes in an array of edges and creates the graph.
+ *
  */
 public class Graph {
 
@@ -105,6 +108,7 @@ public class Graph {
 int sum = 0;
 
         for(int i = 0; i < this.nodes.length; i++){
+            // Put "+="  If you want to print all of the distances.
            output = ("\nThe shortest distance from node 0 to node " + i + " is " + nodes[i].getDistanceFromSource());
            sum +=  nodes[i].getDistanceFromSource();
         }
@@ -123,12 +127,10 @@ int sum = 0;
     }
 
     public Node[] getNodes() {
-
         return nodes;
     }
 
     public Edge[] getEdges() {
-
         return edges;
     }
 }

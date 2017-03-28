@@ -4,6 +4,9 @@ package com.company;
 
 /**
  * Created by jeremiahlukus on 3/24/17.
+ *
+ * This class sets the vertex, edge, and weight.
+ *
  */
 public class Edge {
     private int fromNodeIndex;

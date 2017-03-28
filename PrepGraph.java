@@ -7,6 +7,12 @@ import java.util.Scanner;
 
 /**
  * Created by jeremiahlukus on 3/26/17.
+ *
+ * This class connects the vertex, edge, and weight for the graph, and gives an edge count.
+ *
+ * I do an edge count to make sure I am reading the file properly.
+ *
+ *
  */
 public class PrepGraph {
 
@@ -25,7 +31,6 @@ public class PrepGraph {
             while (lineScanner.hasNext()) {
 
                 countInput++;
-                //edgecount++;
                 lineScanner.nextInt();
                 //System.out.printf("%d\n",lineScanner.nextInt());
             }
@@ -47,19 +52,19 @@ public class PrepGraph {
 
 
     public Edge[] makeEdge ( int edgecount, String outputFileName) throws IOException{
-        Edge[] edges = new Edge[edgecount];//creating edge array  // If i give it the correct edgecount i get error
+        Edge[] edges = new Edge[edgecount]; //creating edge array
         BufferedReader inputReader;
         Scanner lineScanner;
         String line;
         int countInput;
-//now storing to array
+        //now storing to array
         inputReader = new BufferedReader(new FileReader(outputFileName));
-        inputReader.readLine();//skips the first line
+        inputReader.readLine();//skips the first line n=  and m=
         int source = 0, i = 0;
         while ((line = inputReader.readLine()) != null) {
             lineScanner = new Scanner(line);
             countInput = 0;
-            int a[] = new int[2], k = 0; //size of array a should be 2 its holding the source as well as other two elements, edge and distance.
+            int a[] = new int[2], k = 0; //This array is holding the source as well as other two elements, edge and distance.
             while (lineScanner.hasNext()) {
                 countInput++;
                 a[k] = lineScanner.nextInt();
@@ -67,15 +72,15 @@ public class PrepGraph {
                 //System.out.printf("%d\n",lineScanner.nextInt());
             }
             if (countInput == 1) {
+                // System.out.printf("Vertex\n");
                 source = a[0]; //SOURCE WILL ALWAYS HOLD THE FIRST VALUE OF ARRAY a[]
-                // System.out.printf("node\n");
             } else {
                 // System.out.printf("Edge\n");
                 //VALUES PASSING TO CLASSES MODIFIED ACCORDINGLY
                 if(k > edgecount){
                     break;
                 }
-                edges[i++] = new Edge(source, a[k-2], a[k-1]);//adding to array ...
+                edges[i++] = new Edge(source, a[k-2], a[k-1]);//adding to array
 
             }
             //System.out.println(line);
